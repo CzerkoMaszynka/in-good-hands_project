@@ -1,0 +1,12 @@
+@import '/node_modules/normalize.css/normalize.css';
+@import 'settings/colors';
+@import'settings/fonts';
+
+body {
+  font-family: $font-base;
+}
+
+.FastRed {
+  color: red;
+}
+
