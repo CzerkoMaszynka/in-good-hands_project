@@ -29,7 +29,7 @@ const Header = () => (
           Oddaj niechciane rzeczy w zaufane ręce</h1>
           <img src={Decoration} alt="decoration" />
           <div className="section1__buttons">
-            <button className="btn-primary">ODDAJ RZECZY</button>
+            <button className="btn-primary">ODDAJ<br/>RZECZY</button>
             <button className="btn-primary">ZORGANIZUJ ZBIÓRKĘ</button>
           </div>
         </div>
