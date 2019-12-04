@@ -1,0 +1,82 @@
+.section1 {
+  display: flex;
+}
+
+.section1__column {
+  min-width: 885px;
+  height: 963px;
+}
+
+.section1__column > img {
+  display: block;
+  max-width: 885px;
+  height: 963px;
+  object-fit: cover;
+  object-position: 100% 100%;
+}
+
+.section1__login {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 75px;
+  a {
+    margin: 15px;
+    cursor: pointer;
+    font: normal 14px/85px $font-base;
+    padding: 5px;
+    color: $login_text;
+  }
+  a:hover {
+    margin: 14px;
+    border: 1px solid $login_border;
+  }
+}
+
+.section1__ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-bottom: 15px;
+  li {
+    padding: 5px 10px;
+  }
+  li:hover {
+    padding: 4px 9px;
+    border: 1px solid $text_main;
+  }
+}
+
+.section1__mainText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1__mainText {
+  text-align: center;
+  margin-top: 20%;
+  h1 {
+    font: normal 38px/55px $font-base;
+  }
+  img {
+    margin: 20px;
+  }
+  .btn-primary {
+    width: 310px;
+    height: 120px;
+    text-transform: uppercase;
+    font: lighter 36px/45px $font-base;
+    background: #fff;
+    border: 1px solid $text_main;
+    margin: 40px;
+    display: block;
+  }
+  .btn-primary:hover {
+    background: $bg_main;
+  }
+}
+
+.section1__buttons {
+  display: flex;
+}

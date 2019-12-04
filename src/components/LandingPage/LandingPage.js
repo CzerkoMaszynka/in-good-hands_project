@@ -3,7 +3,6 @@ import Header from './Header';
 
 const LandingPage = () => (
   <>
-    <div>LandingPage</div>
     <Header />
   </>
 )
