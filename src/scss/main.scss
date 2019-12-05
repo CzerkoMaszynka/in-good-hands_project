@@ -3,6 +3,8 @@
 @import 'settings/fonts';
 @import "Header.scss";
 @import "ThreeColumns.scss";
+@import "FourSteps.scss";
+@import "settings/buttons";
 
 body {
   font-family: $font-base;
@@ -11,4 +13,6 @@ body {
     cursor: pointer;
   }
 }
+
+
 

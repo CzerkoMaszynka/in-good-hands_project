@@ -1,0 +1,48 @@
+.section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1900px;
+}
+
+.section3__decoration {
+  margin-bottom: 40px;
+}
+
+.section3__articleContainer {
+  display: flex;
+  width: 100%;
+  background: $bg_main;
+  text-align: center;
+  justify-content: center;
+  img {
+    width: 83px;
+    height: 83px;
+  }
+}
+
+.section3__article {
+  width: 150px;
+  height: 325px;
+  margin: 0 75px;
+  box-sizing: border-box;
+  padding-top: 65px;
+}
+
+.section3__shortLine {
+  height: 1px;
+  width: 70px;
+  margin: 0 auto;
+  background: $short_line;
+}
+
+.section3 div:first-of-type{
+  text-align: center;
+}
+
+.section3__header {
+  h1 {
+    font: normal 38px/55px $font-base;
+    margin-top: 55px;
+  }
+}
