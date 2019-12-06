@@ -1,6 +1,12 @@
 import React from "react";
 import HomeHero from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Home-Hero-Image.jpg";
 import Decoration from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Decoration.svg";
+import { Link } from "react-scroll";
+
+const options = {
+  duration: 500,
+  activeClass: "active"
+};
 
 const Header = () => (
   <>
@@ -11,29 +17,41 @@ const Header = () => (
       <div className="section1__column">
         <div className="section1__login">
           <div>
-            <a>Zaloguj</a>
-            <a>Załóż konto</a>
+            <Link to="/login" {...options}>
+              Zaloguj
+            </Link>
+            <Link>Załóż konto</Link>
           </div>
         </div>
         <div className="section1__navi">
           <ul className="section1__ul">
             <li>
-              <a>Start</a>
+              <Link to="Start" {...options}>
+                Start
+              </Link>
             </li>
             <li>
-              <a>O co chodzi?</a>
+              <Link to="FourSteps" {...options}>
+                O co chodzi
+              </Link>
             </li>
             <li>
-              <a>O nas</a>
+              <Link to="AboutUs" {...options}>
+                O nas
+              </Link>
             </li>
             <li>
-              <a>Fundacja i oragnizacje</a>
+              <Link to="Organisation" {...options}>
+                Fundacja i oragnizacje
+              </Link>
             </li>
             <li>
-              <a>Kontakt</a>
+              <Link to="Contact" {...options}>
+                Kontakt
+              </Link>
             </li>
           </ul>
-          <div className="section1__mainText">
+          <div className="section1__mainText" id="Start">
             <h1>
               Zacznij pomagać!
               <br />
@@ -41,12 +59,16 @@ const Header = () => (
             </h1>
             <img src={Decoration} alt="decoration" />
             <div className="section1__buttons">
-              <button className="btn-primary">
-                ODDAJ
-                <br />
-                RZECZY
-              </button>
-              <button className="btn-primary">ZORGANIZUJ ZBIÓRKĘ</button>
+              <Link to="/login">
+                <button className="btn-primary">
+                  ODDAJ
+                  <br />
+                  RZECZY
+                </button>
+              </Link>
+              <Link to="/login">
+                <button className="btn-primary">ZORGANIZUJ ZBIÓRKĘ</button>
+              </Link>
             </div>
           </div>
         </div>

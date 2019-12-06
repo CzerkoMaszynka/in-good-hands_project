@@ -3,6 +3,7 @@ import Header from './Header';
 import ThreeColumns from './ThreeColumns';
 import FourSteps from './FourSteps';
 import AboutUs from './AboutUs';
+import WhoWeHelp from './WhoWeHelp';
 
 const LandingPage = () => (
   <>
@@ -10,6 +11,7 @@ const LandingPage = () => (
     <ThreeColumns />
     <FourSteps />
     <AboutUs />
+    <WhoWeHelp />
   </>
 )
 

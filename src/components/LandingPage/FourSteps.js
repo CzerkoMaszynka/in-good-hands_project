@@ -7,7 +7,7 @@ import Decoration from "/home/damian/Pulpit/in good hands project/in-good-hands_
 
 const FourSteps = () => (
   <>
-    <section className="section3">
+    <section className="section3" id="FourSteps">
       <div className="section3__header">
         <h1>Wystarczą 4 proste kroki</h1>
         <img

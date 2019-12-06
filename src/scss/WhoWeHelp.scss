@@ -1,0 +1,49 @@
+.section5 {
+  width: 1344px;
+  height: 862px;
+  margin: 0 auto;
+  padding-top: 40px;
+  h1 {
+    font: normal 38px/55px $font-base;
+  }
+}
+
+.section5__block1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section5__btn {
+  display: block;
+  font: normal 24px/24px $font-base;
+  width: 210px;
+  height: 80px;
+  border: none;
+  background: #fff;
+  margin: 20px 40px;
+  &:hover{
+    border: 1px solid $text_main;
+    background: $bg_main;
+  }
+}
+
+.section5__btnActive{
+  border: 1px solid $text_main;
+}
+
+
+.section5__buttonContainer {
+  display: flex;
+  margin: 50px 0;
+}
+
+.section5__block2 {
+  h2 {
+    font: normal 22px/30px $font-base;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

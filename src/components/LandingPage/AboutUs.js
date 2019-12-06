@@ -5,7 +5,7 @@ import People from "../../assets/assets/People.jpg";
 
 const AboutUs = () => (
   <>
-    <section className="section4">
+    <section className="section4" id="AboutUs">
       <article className="section4__article">
         <div className="section4__article-container">
         <h1>O nas</h1>
