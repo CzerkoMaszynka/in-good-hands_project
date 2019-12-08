@@ -1,70 +1,96 @@
 import React from "react";
+import Section5SubFundation1 from "./Section5SubFundation1";
+import Section5SubFundation2 from "./Section5SubFundation2";
+import Section5SubFundation3 from "./Section5SubFundation3";
+import Section5FundationMainText from "./Section5FundationMainText";
 
 class Section5Fundation extends React.Component {
+  state = {
+    SubFundation1: true,
+    SubFundation2: false,
+    SubFundation3: false
+  };
+  //Fundations re-rendered by clicking on small btns
+
+  onSubFundation1Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation1: true,
+        SubFundation2: false,
+        SubFundation3: false
+      };
+    });
+  };
+
+  onSubFundation2Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation1: false,
+        SubFundation2: true,
+        SubFundation3: false
+      };
+    });
+  };
+  onSubFundation3Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation1: false,
+        SubFundation2: false,
+        SubFundation3: true
+      };
+    });
+  };
   render() {
-    // const { SubFundation1, SubFundation2, SubFundation3 } = this.state;
-    const { onFundationClick, onOrganisationsClick, onLocalClick, onSubFundation1Click, onSubFundation2Click, onSubFundation3Click } = this.props;
-    return (
-      <>
-        <div className="section5__block1">
-          <div className="section5__buttonContainer">
-            <button
-              className="section5__btn section5__btnActive"
-              onClick={onFundationClick}
-            >
-              Fundacjom
-            </button>
-            <button className="section5__btn" onClick={onOrganisationsClick}>
-              Organizacjom pozarządowym
-            </button>
-            <button className="section5__btn" onClick={onLocalClick}>
-              Lokalnym zbiórkom
-            </button>
-          </div>
-        </div>
-        <div className="section5__block2">
-          <h2>
-            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-            współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
-            czego potrzebują.
-          </h2>
-          <article className="section5__article">
-            <div>
-              <h3>Fundacja "Dbam o Zdrowie"</h3>
-              <p>
-                Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
-                życiowej
-              </p>
-            </div>
-            <div>ubrania, jedzenie, sprzęt AGD, meble, zabawki</div>
-          </article>
-          <article className="section5__article">
-            <div>
-              <h3>Fundacja "Dla dzieci"</h3>
-              <p>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-            </div>
-            <div>ubrania, meble, zabawki</div>
-          </article>
-          <article className="section5__article">
-            <div>
-              <h3>Fundacja "Bez domu"</h3>
-              <p>
-                Cel i misja: Pomoc dla osób nie posiadających miejsca
-                zamieszkania.
-              </p>
-            </div>
-            <div>ubrania, jedzenie, ciepłe koce</div>
-          </article>
-          <div className="section5__pagination">
-            <button className="section5__paginationBtn section5__paginationBtn-active">
-              1
-            </button>
-            <button className="section5__paginationBtn">2</button>
-            <button className="section5__paginationBtn">3</button>
-          </div>
-        </div>
-      </>
-    );
+    const { SubFundation1, SubFundation2, SubFundation3 } = this.state;
+    const { onFundationClick, onOrganisationsClick, onLocalClick } = this.props;
+    if (SubFundation1 === true) {
+      return (
+        <>
+          <Section5FundationMainText
+            onFundationClick={onFundationClick}
+            onOrganisationsClick={onOrganisationsClick}
+            onLocalClick={onLocalClick}
+          />
+          <Section5SubFundation1
+            onSubFundation1Click={this.onSubFundation1Click}
+            onSubFundation2Click={this.onSubFundation2Click}
+            onSubFundation3Click={this.onSubFundation3Click}
+          />
+        </>
+      );
+    }
+    if (SubFundation2 === true) {
+      return (
+        <>
+          <Section5FundationMainText
+            onFundationClick={onFundationClick}
+            onOrganisationsClick={onOrganisationsClick}
+            onLocalClick={onLocalClick}
+          />
+          <Section5SubFundation2
+            onSubFundation1Click={this.onSubFundation1Click}
+            onSubFundation2Click={this.onSubFundation2Click}
+            onSubFundation3Click={this.onSubFundation3Click}
+          />
+        </>
+      );
+    }
+    if (SubFundation3 === true) {
+      return (
+        <>
+          <Section5FundationMainText
+            onFundationClick={onFundationClick}
+            onOrganisationsClick={onOrganisationsClick}
+            onLocalClick={onLocalClick}
+          />
+          <Section5SubFundation3
+            onSubFundation1Click={this.onSubFundation1Click}
+            onSubFundation2Click={this.onSubFundation2Click}
+            onSubFundation3Click={this.onSubFundation3Click}
+          />
+        </>
+      );
+    }
   }
 }
 

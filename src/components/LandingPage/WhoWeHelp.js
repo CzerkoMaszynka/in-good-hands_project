@@ -8,10 +8,7 @@ class WhoWeHelp extends React.Component {
   state = {
     Fundation: true,
     Organisations: false,
-    Local: false,
-    SubFundation1: true,
-    SubFundation2: false,
-    SubFundation3: false,
+    Local: false
   };
 
   //Fundation, organisation and local re-render by clicking on them
@@ -44,31 +41,6 @@ class WhoWeHelp extends React.Component {
     });
   };
 
-  //Fundations re-rendered by clicking on small btns
-
-  onSubFundation1Click = () => {
-    this.setState(() => {
-      return {
-        SubFundation1: true
-      };
-    });
-  };
-
-  onSubFundation2Click = () => {
-    this.setState(() => {
-      return {
-        SubFundation2: true
-      };
-    });
-  };
-  onSubFundation3Click = () => {
-    this.setState(() => {
-      return {
-        SubFundation3: true
-      };
-    });
-  };
-
   render() {
     const { Fundation, Organisations, Local } = this.state;
     if (Fundation === true) {
@@ -80,9 +52,9 @@ class WhoWeHelp extends React.Component {
               onFundationClick={this.onFundationClick}
               onOrganisationsClick={this.onOrganisationsClick}
               onLocalClick={this.onLocalClick}
-              onSubFundation1Click={this.onSubFundation1Click}
-              onSubFundation2Click={this.onSubFundation2Click}
-              onSubFundation3Click={this.onSubFundation3Click}
+              // onSubFundation1Click={this.onSubFundation1Click}
+              // onSubFundation2Click={this.onSubFundation2Click}
+              // onSubFundation3Click={this.onSubFundation3Click}
             />
           </section>
         </>
