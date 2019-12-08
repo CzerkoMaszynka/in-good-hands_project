@@ -52,9 +52,6 @@ class WhoWeHelp extends React.Component {
               onFundationClick={this.onFundationClick}
               onOrganisationsClick={this.onOrganisationsClick}
               onLocalClick={this.onLocalClick}
-              // onSubFundation1Click={this.onSubFundation1Click}
-              // onSubFundation2Click={this.onSubFundation2Click}
-              // onSubFundation3Click={this.onSubFundation3Click}
             />
           </section>
         </>
