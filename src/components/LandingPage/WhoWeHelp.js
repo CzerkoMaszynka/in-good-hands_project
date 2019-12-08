@@ -1,63 +1,122 @@
 import React from "react";
-import Decoration from "../../assets/assets/Decoration.svg";
+import Section5StaticText from "./Section5StaticText";
+import Section5Fundation from "./Section5Fundation";
+import Section5Organisations from "./Section5Organisations";
+import Section5Local from "./Section5Local";
 
-const WhoWeHelp = () => (
-  <>
-    <section className="section5" id="Organisation">
-      <div className="section5__block1">
-        <h1>Komu pomagamy?</h1>
-        <img src={Decoration} alt="decoration" />
-        <div className="section5__buttonContainer">
-          <button className="section5__btn section5__btnActive">
-            Fundacjom
-          </button>
-          <button className="section5__btn">Organizacjom pozarządowym</button>
-          <button className="section5__btn">Lokalnym zbiórkom</button>
-        </div>
-      </div>
-      <div className="section5__block2">
-        <h2>
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-          współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
-          czego potrzebują.
-        </h2>
-        <article className="section5__article">
-          <div>
-            <h3>Fundacja "Dbam o Zdrowie"</h3>
-            <p>
-              Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
-              życiowej
-            </p>
-          </div>
-          <div>ubrania, jedzenie, sprzęt AGD, meble, zabawki</div>
-        </article>
-        <article className="section5__article">
-          <div>
-            <h3>Fundacja "Dla dzieci"</h3>
-            <p>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-          </div>
-          <div>ubrania, meble, zabawki</div>
-        </article>
-        <article className="section5__article">
-          <div>
-            <h3>Fundacja "Bez domu"</h3>
-            <p>
-              Cel i misja: Pomoc dla osób nie posiadających miejsca
-              zamieszkania.
-            </p>
-          </div>
-          <div>ubrania, jedzenie, ciepłe koce</div>
-        </article>
-        <div className="section5__pagination">
-          <button className="section5__paginationBtn section5__paginationBtn-active">
-            1
-          </button>
-          <button className="section5__paginationBtn">2</button>
-          <button className="section5__paginationBtn">3</button>
-        </div>
-      </div>
-    </section>
-  </>
-);
+class WhoWeHelp extends React.Component {
+  state = {
+    Fundation: true,
+    Organisations: false,
+    Local: false,
+    SubFundation1: true,
+    SubFundation2: false,
+    SubFundation3: false,
+  };
+
+  //Fundation, organisation and local re-render by clicking on them
+
+  onFundationClick = () => {
+    this.setState(() => {
+      return {
+        Fundation: true,
+        Organisations: false,
+        Local: false
+      };
+    });
+  };
+  onOrganisationsClick = () => {
+    this.setState(() => {
+      return {
+        Fundation: false,
+        Organisations: true,
+        Local: false
+      };
+    });
+  };
+  onLocalClick = () => {
+    this.setState(() => {
+      return {
+        Fundation: false,
+        Organisations: false,
+        Local: true
+      };
+    });
+  };
+
+  //Fundations re-rendered by clicking on small btns
+
+  onSubFundation1Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation1: true
+      };
+    });
+  };
+
+  onSubFundation2Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation2: true
+      };
+    });
+  };
+  onSubFundation3Click = () => {
+    this.setState(() => {
+      return {
+        SubFundation3: true
+      };
+    });
+  };
+
+  render() {
+    const { Fundation, Organisations, Local } = this.state;
+    if (Fundation === true) {
+      return (
+        <>
+          <section className="section5" id="Organisation">
+            <Section5StaticText />
+            <Section5Fundation
+              onFundationClick={this.onFundationClick}
+              onOrganisationsClick={this.onOrganisationsClick}
+              onLocalClick={this.onLocalClick}
+              onSubFundation1Click={this.onSubFundation1Click}
+              onSubFundation2Click={this.onSubFundation2Click}
+              onSubFundation3Click={this.onSubFundation3Click}
+            />
+          </section>
+        </>
+      );
+    }
+    if (Organisations === true) {
+      return (
+        <>
+          <section className="section5" id="Organisation">
+            <Section5StaticText />
+            <Section5Organisations
+              onFundationClick={this.onFundationClick}
+              onOrganisationsClick={this.onOrganisationsClick}
+              onLocalClick={this.onLocalClick}
+            />
+          </section>
+        </>
+      );
+    }
+    if (Local === true) {
+      return (
+        <>
+          <section className="section5" id="Organisation">
+            <Section5StaticText />
+            <Section5Local
+              onFundationClick={this.onFundationClick}
+              onOrganisationsClick={this.onOrganisationsClick}
+              onLocalClick={this.onLocalClick}
+            />
+          </section>
+        </>
+      );
+    }
+  }
+}
 
 export default WhoWeHelp;
