@@ -1,0 +1,83 @@
+.section6 {
+  margin-top: 200px;
+  width: 1900px;
+  height: 1026px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.section6:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/assets/Background-Contact-Form.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.section6__header {
+  text-align: center;
+  margin-bottom: 35px;
+  h1 {
+    font: normal 38px/55px $font-base;
+  }
+  img {
+    width: 253px;
+    height: 33px;
+  }
+}
+
+.section6__contact {
+  width: 800px;
+}
+
+label {
+  font: 600 16px/25px $font-base;
+  color: $text_main;
+  letter-spacing: 0;
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: 1px solid $short_line;
+  color: $login_text;
+  width: 100%;
+  margin-top: 5px;
+  font: normal 18px/25px $font-base;
+  display: block;
+  &::placeholder {
+    font-weight: normal;
+    color: #3c3c3c26;
+  }
+}
+
+.section6__inputsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin: 10px;
+  }
+}
+
+.section6__textareaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  label {
+    display: block;
+  }
+  textarea {
+    width: 500px;
+    resize: none;
+    display: block;
+
+  }
+}
