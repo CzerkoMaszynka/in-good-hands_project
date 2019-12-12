@@ -1,11 +1,16 @@
 import React from "react";
 import Decoration from "../../assets/assets/Decoration.svg";
+import Facebook from "../../assets/assets/Facebook.svg";
+import Instagram from "../../assets/assets/Instagram.svg";
 
 class Contact extends React.Component {
   render() {
     return (
       <>
-        <section className="section6">
+        <section className="section6" id="Contact" >
+          <div className="section6__leftBox">
+
+          </div>
           <div className="section6__contact">
             <div className="section6__header">
               <h1>Skontaktuj się z nami</h1>
@@ -42,10 +47,17 @@ class Contact extends React.Component {
                   cols="50"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
+                <button type="submit" className="contactBtn" >Wyślij</button>
               </div>
-              <button type="submit">Wyślij</button>
             </form>
           </div>
+          <footer className="section6__footer">
+            <span>
+            Copyright by Coders Lab
+            </span>
+            <a href="https://www.facebook.com/"><img src={Facebook} alt="facebook" /></a>
+            <a href="https://www.instagram.com/"><img src={Instagram} alt="instagram" /></a>
+          </footer>
         </section>
       </>
     );

@@ -1,9 +1,9 @@
 import React from "react";
-import Icon1 from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Icon-1.svg";
-import Icon2 from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Icon-2.svg";
-import Icon3 from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Icon-3.svg";
-import Icon4 from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Icon-4.svg";
-import Decoration from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Decoration.svg";
+import Icon1 from "../../assets/assets/Icon-1.svg";
+import Icon2 from "../../assets/assets/Icon-2.svg";
+import Icon3 from "../../assets/assets/Icon-3.svg";
+import Icon4 from "../../assets/assets/Icon-4.svg";
+import Decoration from "../../assets/assets/Decoration.svg";
 
 const FourSteps = () => (
   <>

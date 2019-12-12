@@ -1,6 +1,6 @@
 import React from "react";
-import HomeHero from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Home-Hero-Image.jpg";
-import Decoration from "/home/damian/Pulpit/in good hands project/in-good-hands_project/src/assets/assets/Decoration.svg";
+import HomeHero from "../../assets/assets/Home-Hero-Image.jpg";
+import Decoration from "../../assets/assets/Decoration.svg";
 import { Link } from "react-scroll";
 
 const options = {
