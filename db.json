@@ -1,0 +1,46 @@
+{ 
+  "fundations":[ 
+     { 
+        "name":"Fundacjom",
+        "desc":"jakis opis",
+        "items":[ 
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           },
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           },
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           }
+        ]
+     },
+     { 
+        "name":"Ogganizacjom",
+        "desc":"jakis opis",
+        "items":[ 
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           },
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           },
+           { 
+              "header":"to jest header",
+              "subheader":"to jest subheader",
+              "desc":"to jest desc"
+           }
+        ]
+     }
+  ]
+}

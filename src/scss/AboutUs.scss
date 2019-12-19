@@ -1,0 +1,37 @@
+.section4 {
+  display: flex;
+  width: 1900px;
+  box-sizing: border-box;
+  background: $bg_main;
+  max-height: 935px;
+  margin-top: 40px;
+}
+
+.section4__bigImage img{
+  width: 942px;
+  height: 935px;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+.section4__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section4__article-container {
+  max-width: 60%;
+  text-align: center;
+  h1 {
+    font: normal 38px/55px $font-base;
+  }
+  p {
+    font: normal 30px/54px $font-base;
+  }
+  img:last-child {
+    display: block;
+    margin-left: auto;
+  }
+}

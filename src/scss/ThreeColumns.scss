@@ -1,0 +1,23 @@
+.section2__container {
+  display: flex;
+  background-image: url("../assets/assets/3\ Columns\ Background.png");
+  justify-content: space-evenly;
+  text-align: center;
+  height: 384px;
+  width: 1900px;
+  box-sizing: border-box;
+  padding: 25px;
+  article {
+    width: 25%;
+  }
+  h1 {
+    font: lighter 90px/25px $font-base;
+    color: $header_big-letters;
+  }
+  h2 {
+    font: normal 18px/30px $font-base;
+  }
+  p {
+    font: lighter 16px/18px $font-alt;
+  }
+}

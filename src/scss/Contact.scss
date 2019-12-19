@@ -1,0 +1,132 @@
+.section6 {
+  margin-top: 200px;
+  width: 1900px;
+  height: 1026px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section6__leftBox{
+  width: 100%;
+  height: 100%;
+}
+
+.section6:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/assets/Background-Contact-Form.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.section6__header {
+  text-align: center;
+  margin-bottom: 35px;
+  h1 {
+    font: normal 38px/55px $font-base;
+  }
+  img {
+    width: 253px;
+    height: 33px;
+  }
+}
+
+.section6__contact {
+  width: 800px;
+  z-index: 50;
+  margin-right: 150px;
+}
+
+label {
+  font: 600 16px/25px $font-base;
+  color: $text_main;
+  letter-spacing: 0;
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: 1px solid $short_line;
+  color: $login_text;
+  margin-top: 5px;
+  padding: 0;
+  background: none;
+  font: normal 18px/25px $font-base;
+  display: block;
+  &::placeholder {
+    font-weight: normal;
+    color: #3c3c3c26;
+  }
+}
+
+input {
+  width: 242px;
+}
+
+.section6__inputsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin: 10px;
+  }
+}
+
+.section6__textareaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  label {
+    display: block;
+    align-self: flex-start;
+    margin-top: 15px;
+  }
+  textarea {
+    width: 500px;
+    resize: none;
+    display: block;
+    // position: relative;
+  }
+}
+
+.contactBtn {
+  align-self: flex-end;
+  margin-top: 40px;
+  background: none;
+  padding: 5px 45px;
+  border: 1px solid $short_line;
+  font: lighter 18px/32px $font-base;
+  &:hover {
+    background: $bg_main;
+  }
+}
+
+.section6__contact {
+  position: relative;
+}
+
+.section6__footer {
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  background: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  span {
+    margin-right: 500px;
+    transform: translateX(-50%);
+  }
+  img {
+    margin: 10px;
+  };
+}

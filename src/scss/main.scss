@@ -1,12 +1,21 @@
 @import '/node_modules/normalize.css/normalize.css';
 @import 'settings/colors';
-@import'settings/fonts';
+@import 'settings/fonts';
+@import "Header.scss";
+@import "ThreeColumns.scss";
+@import "FourSteps.scss";
+@import "settings/buttons";
+@import "AboutUs.scss";
+@import "WhoWeHelp.scss";
+@import "Contact.scss";
 
 body {
   font-family: $font-base;
+  color: $text_main;
+  a, button {
+    cursor: pointer;
+  }
 }
 
-.FastRed {
-  color: red;
-}
+
 
