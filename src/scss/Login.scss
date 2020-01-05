@@ -1,0 +1,43 @@
+a {
+  color: $text_main;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.login {
+  margin-top: 100px;
+}
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  transform: translate(-25%);
+  h1 {
+    font: normal 42px/45px $font-base;
+  }
+  label {
+    // margin: 10px;
+  }
+  input {
+    margin: 15px 0 25px 0;
+  }
+  form {
+    background-color: $bg_main;
+    padding: 35px;
+    margin: 25px;
+  }
+}
+
+.login__btnContainer {
+  margin: 10px 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

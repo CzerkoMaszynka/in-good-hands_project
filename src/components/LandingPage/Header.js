@@ -2,6 +2,7 @@ import React from "react";
 import HomeHero from "../../assets/assets/Home-Hero-Image.jpg";
 import Decoration from "../../assets/assets/Decoration.svg";
 import { Link } from "react-scroll";
+import { NavLink } from 'react-router-dom';
 
 const options = {
   duration: 500,
@@ -17,10 +18,10 @@ const Header = () => (
       <div className="section1__column">
         <div className="section1__login">
           <div>
-            <Link to="/login" {...options}>
+            <NavLink to="/login">
               Zaloguj
-            </Link>
-            <Link>Załóż konto</Link>
+            </NavLink>
+            <NavLink to="/register">Załóż konto</NavLink>
           </div>
         </div>
         <div className="section1__navi">

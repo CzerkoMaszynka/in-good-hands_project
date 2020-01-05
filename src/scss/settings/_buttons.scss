@@ -8,6 +8,22 @@
   margin: 40px;
   display: block;
 }
+
 .btn-primary:hover {
   background: $bg_main;
+}
+
+.btn-secondary {
+  width: 140px;
+  height: 45px;
+  font: lighter 16px $font-base;
+  background: #fff;
+  margin: 5px;
+  display: block;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: $bg_main;
+  border: 1px solid $text_main;
 }
