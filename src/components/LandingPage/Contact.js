@@ -6,12 +6,11 @@ import Instagram from "../../assets/assets/Instagram.svg";
 const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 const reWhiteSpace = /[ \t]+/i;
 
-
 class Contact extends React.Component {
   state = {
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
     isNameValid: true,
     isEmailValid: true,
     isMessageValid: true,
@@ -35,7 +34,7 @@ class Contact extends React.Component {
   sendRequest() {
     const { name, email, message } = this.state;
     fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-      method: 'POST',
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
@@ -47,37 +46,39 @@ class Contact extends React.Component {
     })
       .then(data => data.json())
       .then(data => {
-        if (data.status === 'error') {
+        if (data.status === "error") {
           const mapping = {
-            name: 'isNameValid',
-            email: 'isEmailValid',
-            message: 'isMessageValid'
-          }
+            name: "isNameValid",
+            email: "isEmailValid",
+            message: "isMessageValid"
+          };
 
           data.errors.forEach(el => {
             this.setState({
               [mapping[el.param]]: false
-            })
-          })
+            });
+          });
         }
-      })
+      });
   }
 
   isFormValid = () => {
-    const { name, email, message, isFormValid } = this.state;
-    const isNameValid = !reWhiteSpace.test(name);
+    const { name, email, message } = this.state;
+    const isNameValid = !reWhiteSpace.test(name) && name.length !== 0;
     const isEmailValid = re.test(email);
     const isMessageValid = message.length >= 120;
     this.setState({
-      isNameValid, isEmailValid, isMessageValid
+      isNameValid,
+      isEmailValid,
+      isMessageValid
     });
     if (isNameValid && isEmailValid && isMessageValid) {
       this.setState({
         isFormValid: true
-      })
+      });
     }
     return isNameValid && isEmailValid && isMessageValid;
-  }
+  };
 
   render() {
     const {
@@ -88,19 +89,18 @@ class Contact extends React.Component {
     } = this.state;
     return (
       <>
-        <section className="section6" id="Contact" >
-          <div className="section6__leftBox">
-
-          </div>
+        <section className="section6" id="Contact">
+          <div className="section6__leftBox"></div>
           <div className="section6__contact">
             <div className="section6__header">
               <h1>Skontaktuj się z nami</h1>
               <img src={Decoration} alt="decoration" />
-              {isFormValid &&
+              {isFormValid && (
                 <>
                   <p className="formValid">Wiadomość została wysłana!</p>
                   <p className="formValid">Wkrótce się skontaktujemy.</p>
-                </>}
+                </>
+              )}
             </div>
             <form onSubmit={this.onFormSubmit}>
               <div className="section6__inputsContainer">
@@ -113,7 +113,11 @@ class Contact extends React.Component {
                     placeholder="Krzysztof"
                     onChange={this.onInputChange}
                   />
-                  {!isNameValid && <span style={{ color: "red" }}>Podane imię jest nieprawidłowe!</span>}
+                  {!isNameValid && (
+                    <span style={{ color: "red" }}>
+                      Podane imię jest nieprawidłowe!
+                    </span>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email">Wpisz swój email</label>
@@ -124,7 +128,11 @@ class Contact extends React.Component {
                     placeholder="abc@xyz.pl"
                     onChange={this.onInputChange}
                   />
-                  {!isEmailValid && <span style={{ color: "red" }}>Podany email jest nieprawidłowy!</span>}
+                  {!isEmailValid && (
+                    <span style={{ color: "red" }}>
+                      Podany email jest nieprawidłowy!
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="section6__textareaContainer">
@@ -138,23 +146,30 @@ class Contact extends React.Component {
                   onChange={this.onInputChange}
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
-                {!isMessageValid && <span style={{ color: "red" }}>Wiadomość musi mieć conajmniej 120 znaków!</span>}
-                <button type="submit" className="contactBtn" >Wyślij</button>
+                {!isMessageValid && (
+                  <span style={{ color: "red" }}>
+                    Wiadomość musi mieć conajmniej 120 znaków!
+                  </span>
+                )}
+                <button type="submit" className="contactBtn">
+                  Wyślij
+                </button>
               </div>
             </form>
           </div>
           <footer className="section6__footer">
-            <span>
-              Copyright by Coders Lab
-            </span>
-            <a href="https://www.facebook.com/"><img src={Facebook} alt="facebook" /></a>
-            <a href="https://www.instagram.com/"><img src={Instagram} alt="instagram" /></a>
+            <span>Copyright by Coders Lab</span>
+            <a href="https://www.facebook.com/">
+              <img src={Facebook} alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/">
+              <img src={Instagram} alt="instagram" />
+            </a>
           </footer>
         </section>
       </>
     );
   }
-
 }
 
 export default Contact;

@@ -22,24 +22,20 @@ a {
   h1 {
     font: normal 42px/45px $font-base;
   }
+
   input {
-    margin: 5px auto 25px auto;
+    margin: 0 auto;
   }
   form {
-    // background-color: $bg_main;
-    // padding: 35px;
-    margin: 50px 25px;
+    background-color: $bg_main;
+    padding: 35px;
+    margin: 25px;
   }
-}
-
-.login__formContainer{
-  background-color: $bg_main;
-  width: 70%;
-  margin: 0 auto;
-  padding: 30px 0;
 }
 
 .login__btnContainer {
   margin: 10px 25px;
+  width: 100%;
   display: flex;
+  justify-content: space-around;
 }

@@ -4,6 +4,7 @@ import Icon2 from "../../assets/assets/Icon-2.svg";
 import Icon3 from "../../assets/assets/Icon-3.svg";
 import Icon4 from "../../assets/assets/Icon-4.svg";
 import Decoration from "../../assets/assets/Decoration.svg";
+import { NavLink } from "react-router-dom";
 
 const FourSteps = () => (
   <>
@@ -43,7 +44,9 @@ const FourSteps = () => (
         </article>
       </div>
       <div>
-        <button className="btn-primary">ODDAJ RZECZY</button>
+        <NavLink to="/login">
+          <button className="btn-primary">ODDAJ RZECZY</button>
+        </NavLink>
       </div>
     </section>
   </>

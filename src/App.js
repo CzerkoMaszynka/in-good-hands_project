@@ -14,7 +14,6 @@ function App() {
         <Route path="/register" component={Register} />
       </Switch>
     </Router>
-
   );
 }
 

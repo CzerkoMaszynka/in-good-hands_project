@@ -60,13 +60,13 @@ const Header = () => (
             </h1>
             <img src={Decoration} alt="decoration" />
             <div className="section1__buttons">
-              <Link to="/login">
+              <NavLink to="/login">
                 <button className="btn-primary">
                   ODDAJ
                   <br />
                   RZECZY
                 </button>
-              </Link>
+              </NavLink>
               <Link to="/login">
                 <button className="btn-primary">ZORGANIZUJ ZBIÓRKĘ</button>
               </Link>
