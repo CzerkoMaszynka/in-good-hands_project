@@ -8,7 +8,10 @@ const options = {
   activeclass: "active"
 };
 
-const regEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+function validateEmail(email) {
+  let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 
 class Register extends React.Component {
   state = {
@@ -17,8 +20,7 @@ class Register extends React.Component {
     repeat: "",
     isEmailValid: false,
     isPasswordValid: false,
-    isRepeatValid: false,
-    isFormValid: false
+    isRepeatValid: false
   };
 
   onInputChange = e => {
@@ -29,26 +31,35 @@ class Register extends React.Component {
 
   onFormSubmit = e => {
     e.preventDefault();
-    this.isFormValid();
-  };
-
-  isFormValid = () => {
-    const { email, password, repeat } = this.state;
-    const isEmailValid = regEmail.test(email);
-    const isPasswordValid = password.length >= 6;
-    const isRepeatValid = repeat === password;
-    this.setState({
-      isEmailValid,
-      isPasswordValid,
-      isRepeatValid
-    });
-    if (isEmailValid && isPasswordValid && isRepeatValid) {
+    if (!validateEmail(this.state.email)) {
       this.setState({
-        isFormValid: true
+        isEmailValid: true
+      });
+    } else {
+      this.setState({
+        isEmailValid: false
       });
     }
-    return isEmailValid && isPasswordValid && isRepeatValid;
+    if (this.state.password.length < 6) {
+      this.setState({
+        isPasswordValid: true
+      });
+    } else {
+      this.setState({
+        isPasswordValid: false
+      });
+    }
+    if (this.state.password !== this.state.repeat) {
+      this.setState({
+        isRepeatValid: true
+      });
+    } else {
+      this.setState({
+        isRepeatValid: false
+      });
+    }
   };
+
 
   render() {
     const { isEmailValid, isPasswordValid, isRepeatValid } = this.state;
@@ -106,8 +117,8 @@ class Register extends React.Component {
                     name="email"
                   />
                   {isEmailValid && (
-                    <p style={{ color: "red" }}>
-                      Podany email jest nieprawidłowy!
+                    <p className="alert">
+                      Podany email jest nieprawidłowy
                     </p>
                   )}
                   <label htmlFor="password">Hasło</label>
@@ -118,8 +129,8 @@ class Register extends React.Component {
                     name="password"
                   />
                   {isPasswordValid && (
-                    <p style={{ color: "red" }}>
-                      Podane hasło jest nieprawidłowe!
+                    <p className="alert">
+                      Hasło powinno zawierać minimum 6 znaków
                     </p>
                   )}
                   <label htmlFor="repeat">Powtórz Hasło</label>
@@ -130,7 +141,7 @@ class Register extends React.Component {
                     name="repeat"
                   />
                   {isRepeatValid && (
-                    <p style={{ color: "red" }}>Hasła muszą być identyczne!</p>
+                    <p className="alert">Hasła muszą być identyczne</p>
                   )}
                 </div>
                 <div className="login__btnContainer">
